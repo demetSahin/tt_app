@@ -37,6 +37,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   mobile_scanner: ^2.0.0
+  firebase_core: ^2.7.0
   cloud_firestore: ^4.4.3
   flutter_tts: ^3.6.2
   google_fonts: ^3.0.1
@@ -73,7 +74,26 @@ flutter:
 
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
+  assets:
+    - assets/screens/images/qr-code-1.png
+    - assets/screens/images/icons8-back-100-3.png
+    - assets/screens/images/image-23.png
+    - assets/screens/images/stone-1.png
+    - assets/screens/images/home-1-1.png
+    - assets/screens/images/setting-1.png
+    - assets/screens/images/evolution-1.png
+    - assets/screens/images/icons8-back-100-3-pef.png
+    - assets/screens/images/icons8-back-100-2-K8w.png
+    - assets/screens/images/dolphin-1.png
+    - assets/screens/images/image-24.png
+    - assets/screens/images/birds-1.png
+    - assets/screens/images/icons8-back-100-2.png
+    - assets/screens/images/icons8-about-100-1-1.png
+    - assets/screens/images/fossil-1.png
+    - assets/screens/images/open-door-1.png
+    - assets/screens/images/frame-11163.png
+    - assets/screens/images/pause.png
+    - assets/screens/images/play.png
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
