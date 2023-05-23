@@ -14,7 +14,6 @@ import 'package:flutter/foundation.dart'
 ///   options: DefaultFirebaseOptions.currentPlatform,
 /// );
 /// ```
-/// 
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
@@ -45,40 +44,39 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAlFlN8DfmdP4FPHc4mBTX6pRD7Ct7w7-0',
-    appId: '1:704479671243:web:b48c8cc0bc937cc6e9bc4e',
-    messagingSenderId: '704479671243',
-    projectId: 'qrdeneme-e5ecd',
-    authDomain: 'qrdeneme-e5ecd.firebaseapp.com',
-    storageBucket: 'qrdeneme-e5ecd.appspot.com',
-    measurementId: 'G-DSC8HQJ098',
+    apiKey: 'AIzaSyCbsxPLXOiQ82h_2N-g4TIcAEU6SE6gKrc',
+    appId: '1:836180116901:web:83d773fe868d9f7d86944c',
+    messagingSenderId: '836180116901',
+    projectId: 'tabiat-tarihi-firebase',
+    authDomain: 'tabiat-tarihi-firebase.firebaseapp.com',
+    storageBucket: 'tabiat-tarihi-firebase.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAoi3LvRZQLg4u5_yNl08OCHKDpvCLoA4s',
-    appId: '1:704479671243:android:208424c76957bd68e9bc4e',
-    messagingSenderId: '704479671243',
-    projectId: 'qrdeneme-e5ecd',
-    storageBucket: 'qrdeneme-e5ecd.appspot.com',
+    apiKey: 'AIzaSyAJ5rFY7fmlzDm7IJVyMxGCC2yBJBYjnY8',
+    appId: '1:836180116901:android:d1cbc25814d2c83286944c',
+    messagingSenderId: '836180116901',
+    projectId: 'tabiat-tarihi-firebase',
+    storageBucket: 'tabiat-tarihi-firebase.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyArLp0Lbmr89xiH0egrRhIIm_LN8ulK6C0',
-    appId: '1:704479671243:ios:4a434505c7181b6fe9bc4e',
-    messagingSenderId: '704479671243',
-    projectId: 'qrdeneme-e5ecd',
-    storageBucket: 'qrdeneme-e5ecd.appspot.com',
-    iosClientId: '704479671243-jdbfb82s53jc16fb811atj82g31k0j2d.apps.googleusercontent.com',
-    iosBundleId: 'com.example.qrDeneme',
+    apiKey: 'AIzaSyDcwlVNsDrP3EgMx32ktNueScGnP5MvZgg',
+    appId: '1:836180116901:ios:be30d47446cfe5e586944c',
+    messagingSenderId: '836180116901',
+    projectId: 'tabiat-tarihi-firebase',
+    storageBucket: 'tabiat-tarihi-firebase.appspot.com',
+    iosClientId: '836180116901-bmi0m4bm1pv7rgupabtlm0nn2ji62uiu.apps.googleusercontent.com',
+    iosBundleId: 'com.example.tabiatTarihiApp',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyArLp0Lbmr89xiH0egrRhIIm_LN8ulK6C0',
-    appId: '1:704479671243:ios:4a434505c7181b6fe9bc4e',
-    messagingSenderId: '704479671243',
-    projectId: 'qrdeneme-e5ecd',
-    storageBucket: 'qrdeneme-e5ecd.appspot.com',
-    iosClientId: '704479671243-jdbfb82s53jc16fb811atj82g31k0j2d.apps.googleusercontent.com',
-    iosBundleId: 'com.example.qrDeneme',
+    apiKey: 'AIzaSyDcwlVNsDrP3EgMx32ktNueScGnP5MvZgg',
+    appId: '1:836180116901:ios:be30d47446cfe5e586944c',
+    messagingSenderId: '836180116901',
+    projectId: 'tabiat-tarihi-firebase',
+    storageBucket: 'tabiat-tarihi-firebase.appspot.com',
+    iosClientId: '836180116901-bmi0m4bm1pv7rgupabtlm0nn2ji62uiu.apps.googleusercontent.com',
+    iosBundleId: 'com.example.tabiatTarihiApp',
   );
 }

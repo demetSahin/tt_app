@@ -37,12 +37,12 @@ class _DescriptionState extends State<Description> {
 
   @override
   Widget build(BuildContext context) {
-    String aciklama = "Açıklama";
-    String baslik = "Başlık";
+    String eseradi = "Açıklama";
+    String eseraciklamasi = "Başlık";
     return StreamBuilder<QuerySnapshot>(
       stream: FirebaseFirestore.instance
-          .collection('aciklamalar')
-          .where('id', isEqualTo: int.parse(widget.salon))
+          .collection('tabiat-tarihi-data')
+          .where('esernumarasi', isEqualTo: int.parse(widget.salon))
           .snapshots(),
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) return Text('Error: ${snapshot.error}');
@@ -50,11 +50,11 @@ class _DescriptionState extends State<Description> {
         if (snapshot.hasData) {
           debugPrint("salon : ${widget.salon}");
           var myMap = snapshot.data?.docs.toList().first;
-          baslik = myMap!["name"];
-          aciklama = myMap["description"];
+          eseradi = myMap!["eseradi"];
+          eseraciklamasi = myMap["eseraciklamasi"];
           return Scaffold(
             appBar: AppBar(
-              title: Text(baslik),
+              title: Text(eseradi),
             ),
             body: Stack(
               children: [
@@ -71,7 +71,7 @@ class _DescriptionState extends State<Description> {
                               80.0,
                             ),
                             child: Text(
-                              aciklama,
+                              eseraciklamasi,
                               style: const TextStyle(
                                 color: Color(
                                   0xff296389,
@@ -129,7 +129,7 @@ class _DescriptionState extends State<Description> {
                             );
                             setState(() {});
                             await tts.setLanguage("tr-TR");
-                            await tts.speak(aciklama);
+                            await tts.speak(eseraciklamasi);
                             firstPlay = false;
                           } else if (playing == true) {
                             button = Image.asset(
@@ -145,7 +145,7 @@ class _DescriptionState extends State<Description> {
                               fit: BoxFit.cover,
                             );
                             setState(() {});
-                            await tts.speak(aciklama);
+                            await tts.speak(eseraciklamasi);
                             playing = true;
                           }
                         },
