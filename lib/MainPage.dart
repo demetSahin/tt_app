@@ -76,7 +76,7 @@ class MainPage extends StatelessWidget {
                                       margin: EdgeInsets.fromLTRB(
                                           0 * fem, 0 * fem, 15 * fem, 36 * fem),
                                       child: Text(
-                                        'Tabiat Tarihi Merkezi',
+                                        'Tabiat Tarihi',
                                         style: SafeGoogleFont(
                                           'Josefin Sans',
                                           fontSize: 30 * ffem,
@@ -112,7 +112,8 @@ class MainPage extends StatelessWidget {
                                                 color: const Color.fromRGBO(
                                                     252, 215, 157, 1),
                                               ),
-                                              padding: const EdgeInsets.all(16.0),
+                                              padding:
+                                                  const EdgeInsets.all(16.0),
                                               child: Column(
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.center,
@@ -125,8 +126,8 @@ class MainPage extends StatelessWidget {
                                                   const SizedBox(height: 8.0),
                                                   const Text(
                                                     'QR Kod',
-                                                    style:
-                                                        TextStyle(fontSize: 16.0),
+                                                    style: TextStyle(
+                                                        fontSize: 16.0),
                                                   ),
                                                 ],
                                               ),
@@ -157,18 +158,20 @@ class MainPage extends StatelessWidget {
                                                     color: const Color.fromRGBO(
                                                         252, 215, 157, 1),
                                                   ),
-                                                  padding:
-                                                      const EdgeInsets.all(16.0),
+                                                  padding: const EdgeInsets.all(
+                                                      16.0),
                                                   child: Column(
                                                     mainAxisAlignment:
-                                                        MainAxisAlignment.center,
+                                                        MainAxisAlignment
+                                                            .center,
                                                     children: [
                                                       Image.asset(
                                                         'assets/screens/images/open-door-1.png',
                                                         width: 80,
                                                         height: 80,
                                                       ),
-                                                      const SizedBox(height: 8.0),
+                                                      const SizedBox(
+                                                          height: 8.0),
                                                       const Text(
                                                         'Giriş',
                                                         style: TextStyle(
@@ -199,20 +202,22 @@ class MainPage extends StatelessWidget {
                                                     color: const Color.fromRGBO(
                                                         190, 232, 246, 1),
                                                   ),
-                                                  padding:
-                                                      const EdgeInsets.all(16.0),
+                                                  padding: const EdgeInsets.all(
+                                                      16.0),
                                                   child: Column(
                                                     mainAxisAlignment:
-                                                        MainAxisAlignment.center,
+                                                        MainAxisAlignment
+                                                            .center,
                                                     children: [
                                                       Image.asset(
                                                         'assets/screens/images/stone-1.png',
                                                         width: 80,
                                                         height: 80,
                                                       ),
-                                                      const SizedBox(height: 8.0),
+                                                      const SizedBox(
+                                                          height: 8.0),
                                                       const Text(
-                                                        'Taşlar',
+                                                        'Kayaçlar',
                                                         style: TextStyle(
                                                             fontSize: 16.0),
                                                       ),
@@ -247,20 +252,22 @@ class MainPage extends StatelessWidget {
                                                     color: const Color.fromRGBO(
                                                         190, 232, 246, 1),
                                                   ),
-                                                  padding:
-                                                      const EdgeInsets.all(16.0),
+                                                  padding: const EdgeInsets.all(
+                                                      16.0),
                                                   child: Column(
                                                     mainAxisAlignment:
-                                                        MainAxisAlignment.center,
+                                                        MainAxisAlignment
+                                                            .center,
                                                     children: [
                                                       Image.asset(
                                                         'assets/screens/images/fossil-1.png',
                                                         width: 80,
                                                         height: 80,
                                                       ),
-                                                      const SizedBox(height: 8.0),
+                                                      const SizedBox(
+                                                          height: 8.0),
                                                       const Text(
-                                                        'Fosiller',
+                                                        'Paleontoloji',
                                                         style: TextStyle(
                                                             fontSize: 16.0),
                                                       ),
@@ -289,20 +296,22 @@ class MainPage extends StatelessWidget {
                                                     color: const Color.fromRGBO(
                                                         252, 215, 157, 1),
                                                   ),
-                                                  padding:
-                                                      const EdgeInsets.all(16.0),
+                                                  padding: const EdgeInsets.all(
+                                                      16.0),
                                                   child: Column(
                                                     mainAxisAlignment:
-                                                        MainAxisAlignment.center,
+                                                        MainAxisAlignment
+                                                            .center,
                                                     children: [
                                                       Image.asset(
                                                         'assets/screens/images/evolution-1.png',
                                                         width: 80,
                                                         height: 80,
                                                       ),
-                                                      const SizedBox(height: 8.0),
+                                                      const SizedBox(
+                                                          height: 8.0),
                                                       const Text(
-                                                        'Evrim',
+                                                        'Osteoloji',
                                                         style: TextStyle(
                                                             fontSize: 16.0),
                                                       ),
@@ -337,18 +346,20 @@ class MainPage extends StatelessWidget {
                                                     color: const Color.fromRGBO(
                                                         252, 215, 157, 1),
                                                   ),
-                                                  padding:
-                                                      const EdgeInsets.all(16.0),
+                                                  padding: const EdgeInsets.all(
+                                                      16.0),
                                                   child: Column(
                                                     mainAxisAlignment:
-                                                        MainAxisAlignment.center,
+                                                        MainAxisAlignment
+                                                            .center,
                                                     children: [
                                                       Image.asset(
                                                         'assets/screens/images/birds-1.png',
                                                         width: 80,
                                                         height: 80,
                                                       ),
-                                                      const SizedBox(height: 8.0),
+                                                      const SizedBox(
+                                                          height: 8.0),
                                                       const Text(
                                                         'Kuşlar',
                                                         style: TextStyle(
@@ -379,20 +390,22 @@ class MainPage extends StatelessWidget {
                                                     color: const Color.fromRGBO(
                                                         190, 232, 246, 1),
                                                   ),
-                                                  padding:
-                                                      const EdgeInsets.all(16.0),
+                                                  padding: const EdgeInsets.all(
+                                                      16.0),
                                                   child: Column(
                                                     mainAxisAlignment:
-                                                        MainAxisAlignment.center,
+                                                        MainAxisAlignment
+                                                            .center,
                                                     children: [
                                                       Image.asset(
-                                                        'assets/screens/images/dolphin-1.png',
+                                                        'assets/screens/images/elephant.png',
                                                         width: 80,
                                                         height: 80,
                                                       ),
-                                                      const SizedBox(height: 8.0),
+                                                      const SizedBox(
+                                                          height: 8.0),
                                                       const Text(
-                                                        'Balıklar',
+                                                        'Zooloji',
                                                         style: TextStyle(
                                                             fontSize: 16.0),
                                                       ),

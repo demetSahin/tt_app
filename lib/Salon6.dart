@@ -6,8 +6,21 @@ class Salon6 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Balıklar Salonu")),
-      body: const Text("Balıklar salonudur."),
+      appBar: AppBar(title: const Text("Zooloji Salonu")),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: const Text(
+          "Balıklar salonudur.",
+          style: const TextStyle(
+            color: Color(
+              0xff296389,
+            ),
+            fontSize: 24.0,
+            //height: 8.0,
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+      ),
     );
   }
 }
