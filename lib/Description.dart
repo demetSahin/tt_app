@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'FirebaseErrorScreen.dart';
 
 class Description extends StatefulWidget {
   const Description({super.key, required this.salon});
@@ -19,6 +20,8 @@ class _DescriptionState extends State<Description> {
   FlutterTts tts = FlutterTts();
   bool playing = true, firstPlay = true;
   late Widget button;
+
+  get myMap => null;
 
   @override
   void initState() {
@@ -49,6 +52,11 @@ class _DescriptionState extends State<Description> {
 
         if (snapshot.hasData) {
           debugPrint("salon : ${widget.salon}");
+          if ((snapshot.data! as QuerySnapshot).docs.length == 0) {
+            return Center(
+              child: FirebaseErrorScreen(),
+            );
+          }
           var myMap = snapshot.data?.docs.toList().first;
           eseradi = myMap!["eseradi"];
           eseraciklamasi = myMap["eseraciklamasi"];
