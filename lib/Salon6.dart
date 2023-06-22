@@ -10,7 +10,7 @@ class Salon6 extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: const Text(
-          "Balıklar salonudur.",
+          "Çeşitli denizel omurgasızlar, deniz balıkları, tatlısu balıkları, sürüngenler, memelilere ait tahnit edilmiş kolleksiyonlar sergilenmektedir. Nesli tükenmiş olan Selçuk yöresinden iki Anadolu panter örneği, çift başlı hazer yılanı ve uzakdoğu kökenli kelebek örnekleri yer almaktadır.",
           style: const TextStyle(
             color: Color(
               0xff296389,

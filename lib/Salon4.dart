@@ -10,7 +10,7 @@ class Salon4 extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: const Text(
-          "Evrim salonudur.",
+          "Günümüzde yaşayan balina, devekuşu, at, domuz, tilki, kanguru, yunus, keçi ve yılan iskeletleri sergilenmektedir. Ayrıca Roma dönemine ait (2000 yıl önce) Uşak’ta yaşamış olan bir insanın iskeleti yer almaktadır .",
           style: const TextStyle(
             color: Color(
               0xff296389,
