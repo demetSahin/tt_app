@@ -62,11 +62,11 @@ class _DescriptionState extends State<Description> {
           eseradi = myMap!["eseradi"];
           eseraciklamasi = myMap["eseraciklamasi"];
           eserSayisi = myMap["sayi"] + 1;
-          FirebaseFirestore.instance
-              .collection('tabiat-tarihi-data')
-              .doc("XwWfJlGqBmavH3bD6EP3")
-              .update({"sayi": eserSayisi}).onError(
-                  (error, stackTrace) => print(error));
+          // FirebaseFirestore.instance
+          //     .collection('tabiat-tarihi-data')
+          //     .doc("XwWfJlGqBmavH3bD6EP3")
+          //     .update({"sayi": eserSayisi}).onError(
+          //         (error, stackTrace) => print(error));
 
           return Scaffold(
             appBar: AppBar(

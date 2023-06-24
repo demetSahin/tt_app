@@ -3,6 +3,7 @@ import 'package:mobile_scanner/mobile_scanner.dart';
 import 'Description.dart';
 import 'dart:developer';
 import 'dart:io';
+import 'Update.dart';
 
 class QRViewExample extends StatefulWidget {
   const QRViewExample({Key? key}) : super(key: key);
@@ -65,7 +66,7 @@ class _QRViewExampleState extends State<QRViewExample> {
               } else {
                 final String? code = barcode.rawValue;
                 debugPrint('QR kod metni :  $code');
-                
+                getEser(code);
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
