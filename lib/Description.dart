@@ -42,6 +42,7 @@ class _DescriptionState extends State<Description> {
   Widget build(BuildContext context) {
     String eseradi = "Açıklama";
     String eseraciklamasi = "Başlık";
+    int eserSayisi;
     return StreamBuilder<QuerySnapshot>(
       stream: FirebaseFirestore.instance
           .collection('tabiat-tarihi-data')
@@ -60,6 +61,13 @@ class _DescriptionState extends State<Description> {
           var myMap = snapshot.data?.docs.toList().first;
           eseradi = myMap!["eseradi"];
           eseraciklamasi = myMap["eseraciklamasi"];
+          eserSayisi = myMap["sayi"] + 1;
+          FirebaseFirestore.instance
+              .collection('tabiat-tarihi-data')
+              .doc("XwWfJlGqBmavH3bD6EP3")
+              .update({"sayi": eserSayisi}).onError(
+                  (error, stackTrace) => print(error));
+
           return Scaffold(
             appBar: AppBar(
               title: Text(eseradi),
