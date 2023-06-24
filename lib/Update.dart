@@ -15,20 +15,27 @@ import 'FirebaseErrorScreen.dart';
 //   }
 // }
 void getEser(code) async {
-  var eser = FirebaseFirestore.instance
-      .collection('tabiat-tarihi-data')
-      .where('esernumarasi', isEqualTo: int.parse(code))
-      .snapshots();
-  print("AAAAAAAAAAAAA");
-  var myMap = eser.forEach((element) {print(element)});
-  // var sayi = myMap!['sayi'];
-  // if (response.data()!.length != 0) {
-  //   print("CCCCCCCCCC");
-  //   eser.update({"sayi": sayi}).onError((error, stackTrace) => print(error));
-  // }
-  // print("Length" +  response.data()!.length.toString());
-  // print("sayi" +  sayi.toString());
-  print("code" +  code);
 
-  print("BBBBBBBBBB ");
+  var eser = null;
+  var id = null;
+  await FirebaseFirestore.instance
+      .collection("tabiat-tarihi-data")
+      .where('esernumarasi', isEqualTo: int.parse(code))
+      .get()
+      .then(
+    (querySnapshot) {
+      print("Successfully completed");
+      for (var docSnapshot in querySnapshot.docs) {
+        eser = docSnapshot.data();
+        id = docSnapshot.id;
+        print('${docSnapshot.id} => ${docSnapshot.data()}');
+      }
+    },
+    onError: (e) => {print("Error completing: $e"), eser = null},
+  );
+  var collection = FirebaseFirestore.instance.collection('tabiat-tarihi-data').doc(id);
+  if (eser != null) {
+    collection.update({"sayi": eser['sayi'] + 1}).onError(
+        (error, stackTrace) => print(error));
+  }
 }
