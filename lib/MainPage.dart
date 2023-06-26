@@ -5,6 +5,7 @@ import 'Salon3.dart';
 import 'Salon4.dart';
 import 'Salon5.dart';
 import 'Salon6.dart';
+import 'istatistikler.dart';
 import 'utils.dart';
 import 'QRViewExample.dart';
 
@@ -87,9 +88,8 @@ class MainPage extends StatelessWidget {
                                       ),
                                     ),
                                     Container(
-                                      // group11SHh (1462:86)
-                                      margin: EdgeInsets.fromLTRB(
-                                          0 * fem, 0 * fem, 0 * fem, 80 * fem),
+                                      /*margin: EdgeInsets.fromLTRB(
+                                          0 * fem, 0 * fem, 0 * fem, 80 * fem),*/
                                       width: double.infinity,
                                       child: Column(
                                         crossAxisAlignment:
@@ -414,7 +414,40 @@ class MainPage extends StatelessWidget {
                                                 ),
                                               ),
                                             ],
-                                          )
+                                          ),
+                                          SizedBox(height: 24 * fem),
+                                          GestureDetector(
+                                            onTap: () {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const Istatistikler(),
+                                                ),
+                                              );
+                                            },
+                                            child: Container(
+                                              width: double.infinity,
+                                              margin: const EdgeInsets.only(
+                                                right: 36,
+                                                left: 36,
+                                              ),
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(10.0),
+                                                color: const Color.fromRGBO(
+                                                    190, 232, 246, 1),
+                                              ),
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: const Text(
+                                                'İstatistikler',
+                                                textAlign: TextAlign.center,
+                                                style:
+                                                    TextStyle(fontSize: 30.0),
+                                              ),
+                                            ),
+                                          ),
                                         ],
                                       ),
                                     ),

@@ -1,33 +1,70 @@
 {
   "project_info": {
-    "project_number": "836180116901",
-    "project_id": "tabiat-tarihi-firebase",
-    "storage_bucket": "tabiat-tarihi-firebase.appspot.com"
+    "project_number": "74428290314",
+    "project_id": "tabiattarihisalonu",
+    "storage_bucket": "tabiattarihisalonu.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:836180116901:android:d1cbc25814d2c83286944c",
+        "mobilesdk_app_id": "1:74428290314:android:04a26f1efd7f515ecb96f3",
         "android_client_info": {
           "package_name": "com.example.tabiat_tarihi_app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "836180116901-2bgap5nocbarmhejaqmg6a7bhtjvflb4.apps.googleusercontent.com",
+          "client_id": "74428290314-k5pkvis116ibrlup3bf0gemvr6dkkcpj.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAJ5rFY7fmlzDm7IJVyMxGCC2yBJBYjnY8"
+          "current_key": "AIzaSyA9wnGzW7OXXnTOnWQ8ccmwIewPzG9ietE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "836180116901-2bgap5nocbarmhejaqmg6a7bhtjvflb4.apps.googleusercontent.com",
+              "client_id": "74428290314-k5pkvis116ibrlup3bf0gemvr6dkkcpj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:74428290314:android:f86da526f015756ecb96f3",
+        "android_client_info": {
+          "package_name": "com.example.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "74428290314-hrnqlnlpv98vl9n4cg0rd6q28k00scc1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.test",
+            "certificate_hash": "dc159c01bfd9998a793bd9163df4e58d9cebdc58"
+          }
+        },
+        {
+          "client_id": "74428290314-k5pkvis116ibrlup3bf0gemvr6dkkcpj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9wnGzW7OXXnTOnWQ8ccmwIewPzG9ietE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "74428290314-k5pkvis116ibrlup3bf0gemvr6dkkcpj.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

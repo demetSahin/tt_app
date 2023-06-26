@@ -1,6 +1,16 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+FirebaseFirestore firestore = FirebaseFirestore.instance;
+CollectionReference visitorRef = firestore.collection('visitors');
+
+updateVisitors(String id, int piece) async {
+  await visitorRef.doc(id).update({
+    'visitor': piece,
+  });
+}
 
 class MyCustomScrollBehavior extends MaterialScrollBehavior {
   @override
