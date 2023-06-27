@@ -5,12 +5,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:tabiat_tarihi_app/tab_navigation_item.dart';
 
 FirebaseFirestore firestore = FirebaseFirestore.instance;
-CollectionReference visitorRef = firestore.collection('visitors');
+CollectionReference visitorRef = firestore.collection('tabiat-tarihi-data');
 
 updateVisitors(String id, visits) async {
-  await visitorRef
-      .doc(id)
-      .set({'tabiat-tarihi-data': visits}, SetOptions(merge: true));
+  await visitorRef.doc(id).set({'visits': visits}, SetOptions(merge: true));
 }
 
 BottomNavigationBar buildBottomNavigationBar(
