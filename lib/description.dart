@@ -85,7 +85,10 @@ class _DescriptionState extends State<Description> {
           return Scaffold(
             appBar: AppBar(
               backgroundColor: const Color.fromRGBO(190, 232, 246, 1),
-              leading: Padding(
+              leading: BackButton(
+                color: Color(0xff252468),
+              ),
+              /*leading: Padding(
                 padding: const EdgeInsets.all(6.0),
                 child: Hero(
                   tag: myMap["id"],
@@ -101,7 +104,7 @@ class _DescriptionState extends State<Description> {
                     ),
                   ),
                 ),
-              ),
+              ),*/
               title: Text(
                 eseradi,
                 style: SafeGoogleFont(

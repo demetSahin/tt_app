@@ -8,7 +8,9 @@ FirebaseFirestore firestore = FirebaseFirestore.instance;
 CollectionReference visitorRef = firestore.collection('visitors');
 
 updateVisitors(String id, visits) async {
-  await visitorRef.doc(id).set({'visits': visits}, SetOptions(merge: true));
+  await visitorRef
+      .doc(id)
+      .set({'tabiat-tarihi-data': visits}, SetOptions(merge: true));
 }
 
 BottomNavigationBar buildBottomNavigationBar(

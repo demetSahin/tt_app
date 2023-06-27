@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:tabiat_tarihi_app/utils.dart';
 
 class Chart extends StatefulWidget {
   const Chart({
@@ -126,28 +127,52 @@ class _ChartState extends State<Chart> {
 
   @override
   Widget build(BuildContext context) {
-    //yearsList = yearsList.reversed;
+    double baseWidth = 414;
+    double fem = MediaQuery.of(context).size.width / baseWidth;
+    double ffem = fem * 0.97;
     return Scaffold(
         appBar: AppBar(
+          titleSpacing: 0,
+          leading: BackButton(
+            color: Color(0xff252468),
+          ),
           backgroundColor: const Color.fromRGBO(190, 232, 246, 1),
-          leading: Padding(
-            padding: const EdgeInsets.all(6.0),
-            child: Hero(
-              tag: widget.name,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: const Color.fromRGBO(252, 215, 157, 1),
-                  borderRadius: const BorderRadius.all(Radius.circular(12)),
-                  border: Border.all(),
-                ),
-                padding: const EdgeInsets.all(4.0),
-                child: Image.asset(
-                  widget.imagePath,
+          title: Row(
+            children: [
+              Hero(
+                tag: widget.name,
+                child: Container(
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    color: const Color.fromRGBO(252, 215, 157, 1),
+                    borderRadius: const BorderRadius.all(Radius.circular(12)),
+                    border: Border.all(),
+                  ),
+                  padding: const EdgeInsets.all(4.0),
+                  child: Image.asset(
+                    widget.imagePath,
+                  ),
                 ),
               ),
-            ),
+              SizedBox(
+                width: 8,
+              ),
+              Flexible(
+                child: Text(
+                  '${widget.name} Ziyaretçi İstatistikleri',
+                  maxLines: 2,
+                  style: SafeGoogleFont(
+                    'Josefin Sans',
+                    fontSize: 24 * ffem,
+                    fontWeight: FontWeight.w700,
+                    height: 1.15,
+                    color: Color(0xff252468),
+                  ),
+                ),
+              ),
+            ],
           ),
-          title: Text('${widget.name} Ziyaretçi İstatistikleri'),
         ),
         body: SingleChildScrollView(
           child: Column(children: [

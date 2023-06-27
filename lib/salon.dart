@@ -43,8 +43,12 @@ class _SalonState extends State<Salon> {
     double ffem = fem * 0.97;
     return Scaffold(
       appBar: AppBar(
+        titleSpacing: 0,
+        leading: BackButton(
+          color: Color(0xff252468),
+        ),
         backgroundColor: const Color.fromRGBO(190, 232, 246, 1),
-        leading: Padding(
+        /*leading: Padding(
           padding: const EdgeInsets.all(6.0),
           child: Hero(
             tag: widget.id,
@@ -60,16 +64,41 @@ class _SalonState extends State<Salon> {
               ),
             ),
           ),
-        ),
-        title: Text(
-          widget.title,
-          style: SafeGoogleFont(
-            'Josefin Sans',
-            fontSize: 30 * ffem,
-            fontWeight: FontWeight.w700,
-            height: 1 * ffem / fem,
-            color: Color(0xff252468),
-          ),
+        ),*/
+        title: Row(
+          children: [
+            Hero(
+              tag: widget.id,
+              child: Container(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: const Color.fromRGBO(252, 215, 157, 1),
+                  borderRadius: const BorderRadius.all(Radius.circular(12)),
+                  border: Border.all(),
+                ),
+                padding: const EdgeInsets.all(4.0),
+                child: Image.asset(
+                  widget.imagePath,
+                ),
+              ),
+            ),
+            SizedBox(
+              width: 8,
+            ),
+            Flexible(
+              child: Text(
+                widget.title,
+                style: SafeGoogleFont(
+                  'Josefin Sans',
+                  fontSize: 30 * ffem,
+                  fontWeight: FontWeight.w700,
+                  height: 1 * ffem / fem,
+                  color: Color(0xff252468),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
       body: StreamBuilder(
