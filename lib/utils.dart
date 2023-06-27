@@ -2,14 +2,44 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:tabiat_tarihi_app/tab_navigation_item.dart';
 
 FirebaseFirestore firestore = FirebaseFirestore.instance;
 CollectionReference visitorRef = firestore.collection('visitors');
 
-updateVisitors(String id, int piece) async {
-  await visitorRef.doc(id).update({
-    'visitor': piece,
-  });
+updateVisitors(String id, visits) async {
+  await visitorRef.doc(id).set({'visits': visits}, SetOptions(merge: true));
+}
+
+BottomNavigationBar buildBottomNavigationBar(
+  BuildContext context,
+  int index,
+  function,
+) {
+  return BottomNavigationBar(
+    type: BottomNavigationBarType.shifting,
+    selectedIconTheme: IconThemeData(
+      size: 28.0,
+      color: Color(0xff252468),
+      opacity: 1.0,
+    ),
+    unselectedIconTheme: IconThemeData(
+      color: Color(0xff252468),
+      opacity: 0.3,
+    ),
+    selectedItemColor: Color(0xff252468),
+    showUnselectedLabels: true,
+    showSelectedLabels: true,
+    currentIndex: index,
+    onTap: function,
+    items: <BottomNavigationBarItem>[
+      for (final tabItem in TabNavigationItem.getTabItems(context))
+        BottomNavigationBarItem(
+          icon: tabItem.icon,
+          label: tabItem.label,
+        ),
+    ],
+  );
 }
 
 class MyCustomScrollBehavior extends MaterialScrollBehavior {

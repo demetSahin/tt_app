@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
-import 'Salon1.dart';
-import 'Salon2.dart';
-import 'Salon3.dart';
-import 'Salon4.dart';
-import 'Salon5.dart';
-import 'Salon6.dart';
-import 'istatistikler.dart';
+import 'package:tabiat_tarihi_app/salon.dart';
 import 'utils.dart';
-import 'QRViewExample.dart';
+import 'qr_view.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -26,15 +20,12 @@ class MainPage extends StatelessWidget {
               delegate: SliverChildListDelegate(
                 [
                   Container(
-                    // width: double.infinity,
                     child: Container(
-                      // width: double.infinity,
                       height: 896 * fem,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(36 * fem),
                       ),
                       child: Container(
-                        // homePHV (33:699)
                         width: double.infinity,
                         height: double.infinity,
                         decoration: BoxDecoration(
@@ -44,7 +35,6 @@ class MainPage extends StatelessWidget {
                         child: Stack(
                           children: [
                             Positioned(
-                              // image36Bu (1263:184)
                               left: 29 * fem,
                               top: 395 * fem,
                               child: Align(
@@ -63,7 +53,6 @@ class MainPage extends StatelessWidget {
                               ),
                             ),
                             Positioned(
-                              // group178eP (1462:350)
                               left: 29 * fem,
                               top: 34 * fem,
                               child: Container(
@@ -73,7 +62,6 @@ class MainPage extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Container(
-                                      // tabiattarihimerkeziQ67 (1272:189)
                                       margin: EdgeInsets.fromLTRB(
                                           0 * fem, 0 * fem, 15 * fem, 36 * fem),
                                       child: Text(
@@ -88,8 +76,6 @@ class MainPage extends StatelessWidget {
                                       ),
                                     ),
                                     Container(
-                                      /*margin: EdgeInsets.fromLTRB(
-                                          0 * fem, 0 * fem, 0 * fem, 80 * fem),*/
                                       width: double.infinity,
                                       child: Column(
                                         crossAxisAlignment:
@@ -101,7 +87,7 @@ class MainPage extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                   builder: (context) =>
-                                                      const QRViewExample(),
+                                                      const QRView(),
                                                 ),
                                               );
                                             },
@@ -143,9 +129,34 @@ class MainPage extends StatelessWidget {
                                                   Navigator.push(
                                                     context,
                                                     MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          const Salon1(),
-                                                    ),
+                                                        builder: (context) =>
+                                                            Salon(
+                                                              title:
+                                                                  "Giriş Salonu",
+                                                              id: "salon1",
+                                                              /*description:
+                                                                  "Ege Üniversitesi Fen Fakültesine bağlı bir Tabiat Tarihi "
+                                                                  "Müzesi kurulması düşüncesi, ilk kez 1963 yılında ortaya "
+                                                                  "atılmış ve 1967 yılında yaşama geçirilmiştir. "
+                                                                  "Tabiat Tarihi Müzesi 1973 yılında Cumhuriyet’in "
+                                                                  "50. yılı kutlama programı çerçevesinde, doğa ve "
+                                                                  "doğa tarihi ile ilgili objeleri ilk kez topluma "
+                                                                  "sunmuştur.Tabiat Tarihi Müzesi, tüm doğa tarihi "
+                                                                  "ve doğa zenginliklerinin toplandığı, korunduğu ve "
+                                                                  "belirli bir sistematik ve evrimsel düzen içerisinde "
+                                                                  "sergilendiği görsel ve bilimsel bir ortamdır. Tabiat "
+                                                                  "Tarihi Müzeleri, bir bağlamda doğanın tüm görkemiyle "
+                                                                  "ve gizemiyle toplumun hizmetine bir zaman tünelinde "
+                                                                  "gibi sunulduğu ortamlardır. Ayrıca, doğanın gizemi "
+                                                                  "topluma çeşitli panolarla ve dioramalarla sunulmaya "
+                                                                  "çalışılırken, 4,5 milyar yıl önce oluşmuş dünyamızın "
+                                                                  "geçirdiği evrimi anlamaya, öğrenmeyi ve sorgulamayı "
+                                                                  "da amaçlamaktadır.",*/
+                                                              imagePath:
+                                                                  'assets/screens/images/open-door-1.png',
+                                                            )
+                                                        /*const Salon1(),*/
+                                                        ),
                                                   );
                                                 },
                                                 child: Container(
@@ -165,10 +176,13 @@ class MainPage extends StatelessWidget {
                                                         MainAxisAlignment
                                                             .center,
                                                     children: [
-                                                      Image.asset(
-                                                        'assets/screens/images/open-door-1.png',
-                                                        width: 80,
-                                                        height: 80,
+                                                      Hero(
+                                                        tag: "salon1",
+                                                        child: Image.asset(
+                                                          'assets/screens/images/open-door-1.png',
+                                                          width: 80,
+                                                          height: 80,
+                                                        ),
                                                       ),
                                                       const SizedBox(
                                                           height: 8.0),
@@ -187,9 +201,30 @@ class MainPage extends StatelessWidget {
                                                   Navigator.push(
                                                     context,
                                                     MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          const Salon2(),
-                                                    ),
+                                                        builder: (context) =>
+                                                            Salon(
+                                                              title:
+                                                                  "Kayaçlar Salonu",
+                                                              id: "salon2",
+                                                              /*description:
+                                                                  "Mağmatik, tortul ve başkalaşım kayalarına ait örnekler, "
+                                                                  "oluşum kökenlerine göre, sistematik olarak ayrı ayrı "
+                                                                  "vitrinlerde örneklenmiştir. Ekonomik değeri ve günlük "
+                                                                  "yaşamda kullanım yeri olan kayaç ve mineraller (mermer, "
+                                                                  "perlit, kömür çeşitleri, petrol ürünleri, radyoaktif "
+                                                                  "mineraller ve çeşitli cevherler) yanısıra,adoğada çok "
+                                                                  "ender rastlanan dev boyutlu kuvars kristalleri, Müzenin "
+                                                                  "en ilginç örneklerini oluşturur. Yarı değerli süs taşı "
+                                                                  "olarak bilinen bazı mineral ve kayaların işlenmiş ve "
+                                                                  "doğal örneklerin bir arada sergilendiği bölüm, galerinin"
+                                                                  " renkli köşelerinden biridir. Galeride, volkanizma "
+                                                                  "ses-duman effektleri ve ilgili posterlerle "
+                                                                  "sergilenmektedir",*/
+                                                              imagePath:
+                                                                  'assets/screens/images/stone-1.png',
+                                                            )
+                                                        /*const Salon2(),*/
+                                                        ),
                                                   );
                                                 },
                                                 child: Container(
@@ -209,10 +244,13 @@ class MainPage extends StatelessWidget {
                                                         MainAxisAlignment
                                                             .center,
                                                     children: [
-                                                      Image.asset(
-                                                        'assets/screens/images/stone-1.png',
-                                                        width: 80,
-                                                        height: 80,
+                                                      Hero(
+                                                        tag: "salon2",
+                                                        child: Image.asset(
+                                                          'assets/screens/images/stone-1.png',
+                                                          width: 80,
+                                                          height: 80,
+                                                        ),
                                                       ),
                                                       const SizedBox(
                                                           height: 8.0),
@@ -237,9 +275,34 @@ class MainPage extends StatelessWidget {
                                                   Navigator.push(
                                                     context,
                                                     MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          const Salon3(),
-                                                    ),
+                                                        builder: (context) =>
+                                                            Salon(
+                                                              title:
+                                                                  "Paleontoloji Salonu",
+                                                              id: "salon3",
+                                                              /*description:
+                                                                  "Türkiye’nin çeşitli bölgelerinden toplanmış Tersiyer yaşlı (60 - "
+                                                                  "2 milyon yıl öncesi) memeli fosilleri (Proboscidea-Filler, "
+                                                                  "Perissodactyla-Tektoynaklılar, Carnivora-Etçiller, "
+                                                                  "Rhinocerotidae-Gergedanlar, Artiodactyla-Çifttoynaklılar, "
+                                                                  "Giraffidae-Zürafalar gibi), Karbonifer yaşlı (350 milyon "
+                                                                  "yıl öncesi) bitki fosilleri (Pteropsida-Eğreltiotları, "
+                                                                  "Lycopside-Kibritotları gibi) ve Kambriyenden Pleistosene "
+                                                                  "kadar yaşamış çeşitli omurgasız fosilleri sergilenmektedir. "
+                                                                  "Perissodactyla, Proboscidea ve Primatatakımlarının 60 milyon "
+                                                                  "yıl önce yaşamış atalarına ait fosiller ve günümüz "
+                                                                  "temsilcilerine ait örnekler çeşitli panolarda "
+                                                                  "sergilenmektedir. Fosillerin düzenlenmesinde jeolojik "
+                                                                  "zaman ve evrim gözetilmiştir. Galeride, ayrıca, Salihli "
+                                                                  "(Manisa) yöresinde 10.000 yıl öncesine ait bir volkan "
+                                                                  "patlaması sonrası oluşan insan ayak izi ve Kahramanmaraş’ta "
+                                                                  "Gavur Gölü bataklığında bulunmuş bir Suriye filinin "
+                                                                  "(Elephas maxima asurus) iskeleti yer almaktadır.",*/
+                                                              imagePath:
+                                                                  'assets/screens/images/fossil-1.png',
+                                                            )
+                                                        /*const Salon3(),*/
+                                                        ),
                                                   );
                                                 },
                                                 child: Container(
@@ -259,10 +322,13 @@ class MainPage extends StatelessWidget {
                                                         MainAxisAlignment
                                                             .center,
                                                     children: [
-                                                      Image.asset(
-                                                        'assets/screens/images/fossil-1.png',
-                                                        width: 80,
-                                                        height: 80,
+                                                      Hero(
+                                                        tag: "salon3",
+                                                        child: Image.asset(
+                                                          'assets/screens/images/fossil-1.png',
+                                                          width: 80,
+                                                          height: 80,
+                                                        ),
                                                       ),
                                                       const SizedBox(
                                                           height: 8.0),
@@ -281,9 +347,21 @@ class MainPage extends StatelessWidget {
                                                   Navigator.push(
                                                     context,
                                                     MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          const Salon4(),
-                                                    ),
+                                                        builder: (context) =>
+                                                            Salon(
+                                                              title:
+                                                                  "Osteoloji Salonu",
+                                                              id: "salon4",
+                                                              /*description:
+                                                                  "Günümüzde yaşayan balina, devekuşu, at, domuz, tilki, kanguru, "
+                                                                  "yunus, keçi ve yılan iskeletleri sergilenmektedir. Ayrıca "
+                                                                  "Roma dönemine ait (2000 yıl önce) Uşak’ta yaşamış olan bir "
+                                                                  "insanın iskeleti yer almaktadır.",*/
+                                                              imagePath:
+                                                                  'assets/screens/images/evolution-1.png',
+                                                            )
+                                                        /*const Salon4(),*/
+                                                        ),
                                                   );
                                                 },
                                                 child: Container(
@@ -303,10 +381,13 @@ class MainPage extends StatelessWidget {
                                                         MainAxisAlignment
                                                             .center,
                                                     children: [
-                                                      Image.asset(
-                                                        'assets/screens/images/evolution-1.png',
-                                                        width: 80,
-                                                        height: 80,
+                                                      Hero(
+                                                        tag: "salon4",
+                                                        child: Image.asset(
+                                                          'assets/screens/images/evolution-1.png',
+                                                          width: 80,
+                                                          height: 80,
+                                                        ),
                                                       ),
                                                       const SizedBox(
                                                           height: 8.0),
@@ -331,9 +412,25 @@ class MainPage extends StatelessWidget {
                                                   Navigator.push(
                                                     context,
                                                     MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          const Salon5(),
-                                                    ),
+                                                        builder: (context) =>
+                                                            Salon(
+                                                              title:
+                                                                  "Kuşlar Salonu",
+                                                              id: "salon5",
+                                                              /*description:
+                                                                  "Türkiye, Avrupa, Asya ve Afrika kıtaları arasında doğal bir "
+                                                                  "köprü işlevi görmektedir. Sahip olduğu bu coğrafi konumu "
+                                                                  "nedeniyle Türkiye’de 426 kuş türü gözlenmektedir. Galeride, "
+                                                                  "özellikle Ege Bölgesinde gözlenen 104 tür kuş (atmaca, "
+                                                                  "kartal, flamingo, pelikan, balıkçıl gibi) sergilenmektedir. "
+                                                                  "Ayrıca, ziyaretçilere kuş yumurtalarının çeşitliliği "
+                                                                  "konusunda bilgi verilmesi amacı ile 31 değişik kuşun "
+                                                                  "yumurtası da yer almaktadır.",*/
+                                                              imagePath:
+                                                                  'assets/screens/images/birds-1.png',
+                                                            )
+                                                        /*const Salon5(),*/
+                                                        ),
                                                   );
                                                 },
                                                 child: Container(
@@ -353,10 +450,13 @@ class MainPage extends StatelessWidget {
                                                         MainAxisAlignment
                                                             .center,
                                                     children: [
-                                                      Image.asset(
-                                                        'assets/screens/images/birds-1.png',
-                                                        width: 80,
-                                                        height: 80,
+                                                      Hero(
+                                                        tag: "salon5",
+                                                        child: Image.asset(
+                                                          'assets/screens/images/birds-1.png',
+                                                          width: 80,
+                                                          height: 80,
+                                                        ),
                                                       ),
                                                       const SizedBox(
                                                           height: 8.0),
@@ -375,9 +475,22 @@ class MainPage extends StatelessWidget {
                                                   Navigator.push(
                                                     context,
                                                     MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          const Salon6(),
-                                                    ),
+                                                        builder: (context) =>
+                                                            Salon(
+                                                              title:
+                                                                  "Zooloji Salonu",
+                                                              id: "salon6",
+                                                              /*description:
+                                                                  "Çeşitli denizel omurgasızlar, deniz balıkları, tatlısu balıkları, "
+                                                                  "sürüngenler, memelilere ait tahnit edilmiş kolleksiyonlar "
+                                                                  "sergilenmektedir. Nesli tükenmiş olan Selçuk yöresinden iki "
+                                                                  "Anadolu panter örneği, çift başlı hazer yılanı ve uzakdoğu "
+                                                                  "kökenli kelebek örnekleri yer almaktadır.",*/
+                                                              imagePath:
+                                                                  'assets/screens/images/elephant.png',
+                                                            )
+                                                        /*const Salon6(),*/
+                                                        ),
                                                   );
                                                 },
                                                 child: Container(
@@ -397,10 +510,13 @@ class MainPage extends StatelessWidget {
                                                         MainAxisAlignment
                                                             .center,
                                                     children: [
-                                                      Image.asset(
-                                                        'assets/screens/images/elephant.png',
-                                                        width: 80,
-                                                        height: 80,
+                                                      Hero(
+                                                        tag: "salon6",
+                                                        child: Image.asset(
+                                                          'assets/screens/images/elephant.png',
+                                                          width: 80,
+                                                          height: 80,
+                                                        ),
                                                       ),
                                                       const SizedBox(
                                                           height: 8.0),
@@ -415,7 +531,7 @@ class MainPage extends StatelessWidget {
                                               ),
                                             ],
                                           ),
-                                          SizedBox(height: 24 * fem),
+                                          /*SizedBox(height: 24 * fem),
                                           GestureDetector(
                                             onTap: () {
                                               Navigator.push(
@@ -447,7 +563,7 @@ class MainPage extends StatelessWidget {
                                                     TextStyle(fontSize: 30.0),
                                               ),
                                             ),
-                                          ),
+                                          ),*/
                                         ],
                                       ),
                                     ),

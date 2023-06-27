@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:tabiat_tarihi_app/item_model.dart';
 import 'package:tabiat_tarihi_app/utils.dart';
 
-class Istatistikler extends StatefulWidget {
-  const Istatistikler({super.key});
+class PopularObjects extends StatefulWidget {
+  const PopularObjects({super.key});
 
   @override
-  State<Istatistikler> createState() => _IstatistiklerState();
+  State<PopularObjects> createState() => _PopularObjectsState();
 }
 
-class _IstatistiklerState extends State<Istatistikler> {
+class _PopularObjectsState extends State<PopularObjects> {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 414;
@@ -22,7 +22,7 @@ class _IstatistiklerState extends State<Istatistikler> {
           children: [
             const SizedBox(height: 32.0),
             Text(
-              "Salon Ziyaretçi Sayıları",
+              "Popüler Objeler",
               style: SafeGoogleFont(
                 'Josefin Sans',
                 fontSize: 30 * ffem,
@@ -37,23 +37,22 @@ class _IstatistiklerState extends State<Istatistikler> {
                 padding: const EdgeInsets.all(16.0),
                 child: StreamBuilder(
                   stream: visitorRef
-                      .where('order', isLessThanOrEqualTo: 6)
-                      /*.orderBy('order', descending: true)
-                      .orderBy('visitNumber', descending: true)*/
+                      /*.orderBy('visits', descending: true)*/
+                      .where('order', isGreaterThanOrEqualTo: 7)
                       .snapshots(),
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
                       List list = snapshot.data!.docs.toList();
-                      List<ItemModel> salonList = [];
+                      List<ItemModel> objectsList = [];
                       for (int i = 0; i < list.length; ++i) {
-                        salonList.add(ItemModel(
+                        objectsList.add(ItemModel(
                           key: UniqueKey(),
                           name: list[i]["name"],
                           imagePath: list[i]["imagePath"],
                           visits: list[i]["visits"],
                         ));
                       }
-                      salonList.sort(
+                      objectsList.sort(
                           (a, b) => b.visits.length.compareTo(a.visits.length));
 
                       return Material(
@@ -75,9 +74,9 @@ class _IstatistiklerState extends State<Istatistikler> {
                                     parent: AlwaysScrollableScrollPhysics(),
                                   ),
                                   shrinkWrap: true,
-                                  itemCount: salonList.length,
+                                  itemCount: objectsList.length,
                                   itemBuilder: (context, index) {
-                                    return salonList[index];
+                                    return objectsList[index];
                                   },
                                   separatorBuilder:
                                       (BuildContext context, int index) =>

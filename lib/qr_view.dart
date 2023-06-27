@@ -1,31 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
-import 'Description.dart';
-import 'dart:developer';
-import 'dart:io';
-import 'Update.dart';
+import 'package:tabiat_tarihi_app/utils.dart';
+import 'description.dart';
+import 'update.dart';
 
-class QRViewExample extends StatefulWidget {
-  const QRViewExample({Key? key}) : super(key: key);
+class QRView extends StatefulWidget {
+  const QRView({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _QRViewExampleState();
+  State<StatefulWidget> createState() => _QRViewState();
 }
 
-class _QRViewExampleState extends State<QRViewExample> {
-
+class _QRViewState extends State<QRView> {
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
-
 
   @override
   Widget build(BuildContext context) {
+    double baseWidth = 414;
+    double fem = MediaQuery.of(context).size.width / baseWidth;
+    double ffem = fem * 0.97;
     MobileScannerController cameraController = MobileScannerController();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('QR Okuma'),
+        leading: BackButton(
+          color: Color(0xff252468),
+        ),
+        backgroundColor: const Color.fromRGBO(190, 232, 246, 1),
+        title: Text(
+          'QR Okuma',
+          style: SafeGoogleFont(
+            'Josefin Sans',
+            fontSize: 30 * ffem,
+            fontWeight: FontWeight.w700,
+            height: 1 * ffem / fem,
+            color: Color(0xff252468),
+          ),
+        ),
         actions: [
           IconButton(
-            color: Colors.white,
+            color: Color(0xff252468),
             icon: ValueListenableBuilder(
               valueListenable: cameraController.torchState,
               builder: (context, state, child) {
@@ -40,7 +53,7 @@ class _QRViewExampleState extends State<QRViewExample> {
             onPressed: () => cameraController.toggleTorch(),
           ),
           IconButton(
-            color: Colors.white,
+            color: Color(0xff252468),
             icon: ValueListenableBuilder(
               valueListenable: cameraController.cameraFacingState,
               builder: (context, state, child) {
@@ -57,7 +70,6 @@ class _QRViewExampleState extends State<QRViewExample> {
         ],
       ),
       body: MobileScanner(
-          //allowDuplicates: true,
           controller: cameraController,
           onDetect: (barcode, args) {
             setState(() {
@@ -66,7 +78,7 @@ class _QRViewExampleState extends State<QRViewExample> {
               } else {
                 final String? code = barcode.rawValue;
                 debugPrint('QR kod metni :  $code');
-                getEser(code);
+                //getEser(code);
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
@@ -76,18 +88,6 @@ class _QRViewExampleState extends State<QRViewExample> {
               }
             });
           }),
-    );
-  }
-
-  void _redirectPage(String code) {
-    // controller?.pauseCamera();
-    // controller?.dispose();
-
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => Description(salon: code),
-      ),
     );
   }
 }
