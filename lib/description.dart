@@ -4,8 +4,6 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:tabiat_tarihi_app/utils.dart';
 import 'firebase_error_screen.dart';
 
-bool run = true;
-
 class Description extends StatefulWidget {
   const Description({super.key, required this.salon});
 
@@ -19,6 +17,7 @@ class _DescriptionState extends State<Description> {
   FlutterTts tts = FlutterTts();
   bool playing = true, firstPlay = true;
   late Widget button;
+  bool run = true;
 
   @override
   void initState() {
@@ -66,6 +65,7 @@ class _DescriptionState extends State<Description> {
           eseradi = /*myMap!["eseradi"]*/ myMap!["name"];
           eseraciklamasi = /*myMap["eseraciklamasi"]*/ myMap["description"];
           /*eserSayisi = myMap["sayi"] + 1;*/
+          //debugPrint("id: ${}");
 
           if (run) {
             var visits = myMap["visits"];

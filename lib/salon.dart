@@ -3,11 +3,10 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:tabiat_tarihi_app/utils.dart';
 
 class Salon extends StatefulWidget {
-  const Salon(
-      {super.key,
-      required this.title,
-      required this.id,
-      required this.imagePath});
+  const Salon({super.key,
+    required this.title,
+    required this.id,
+    required this.imagePath});
 
   final String title, id, imagePath;
 
@@ -17,8 +16,10 @@ class Salon extends StatefulWidget {
 
 class _SalonState extends State<Salon> {
   FlutterTts tts = FlutterTts();
-  bool playing = true, firstPlay = true;
+  bool playing = true,
+      firstPlay = true;
   late Widget button;
+  bool run = true;
 
   @override
   void initState() {
@@ -37,9 +38,11 @@ class _SalonState extends State<Salon> {
 
   @override
   Widget build(BuildContext context) {
-    bool run = true;
     double baseWidth = 414;
-    double fem = MediaQuery.of(context).size.width / baseWidth;
+    double fem = MediaQuery
+        .of(context)
+        .size
+        .width / baseWidth;
     double ffem = fem * 0.97;
     return Scaffold(
       appBar: AppBar(
