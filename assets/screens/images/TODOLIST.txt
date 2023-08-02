@@ -1,4 +1,0 @@
-1) Eser sayfasından geri QR okuma kısmına dönünce QR okumuyor.
-2) Emülatörde ön kamera çalışmıyor.
-3) BottomNavigationBar kısmı boş.
-4) Ana sayfa menü kısmı olacak.
